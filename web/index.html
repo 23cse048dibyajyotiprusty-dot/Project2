@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Your One-Stop E-Commerce Destination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shopping-cart"></i>
+                    ShopEasy
+                </a>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Search products..." id="searchInput">
+                    <button type="button" onclick="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.jsp">Products</a></li>
+                    <li><a href="categories.jsp">Categories</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="register.jsp">Register</a></li>
+                    <li>
+                        <a href="cart.jsp" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Welcome to ShopEasy</h1>
+                <p>Discover amazing products at unbeatable prices. Shop now and experience the best in online shopping!</p>
+                <a href="products.jsp" class="btn-hero">Start Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title slide-in-left">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card fade-in" onclick="location.href='products.jsp?category=1'">
+                    <span class="category-icon">📱</span>
+                    <h3>Electronics</h3>
+                    <p>Latest gadgets and tech</p>
+                </div>
+                <div class="category-card fade-in" onclick="location.href='products.jsp?category=2'">
+                    <span class="category-icon">👕</span>
+                    <h3>Clothing</h3>
+                    <p>Fashion for everyone</p>
+                </div>
+                <div class="category-card fade-in" onclick="location.href='products.jsp?category=3'">
+                    <span class="category-icon">📚</span>
+                    <h3>Books</h3>
+                    <p>Knowledge at your fingertips</p>
+                </div>
+                <div class="category-card fade-in" onclick="location.href='products.jsp?category=4'">
+                    <span class="category-icon">🏠</span>
+                    <h3>Home & Garden</h3>
+                    <p>Make your space beautiful</p>
+                </div>
+                <div class="category-card fade-in" onclick="location.href='products.jsp?category=5'">
+                    <span class="category-icon">⚽</span>
+                    <h3>Sports</h3>
+                    <p>Gear for active lifestyle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title slide-in-left">Featured Products</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Featured products will be loaded here -->
+                <div class="product-card fade-in">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Latest Smartphone</h3>
+                        <div class="product-price">₹25,999.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(128 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(1)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Professional Laptop</h3>
+                        <div class="product-price">₹65,999.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(95 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(2)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">👕</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cotton T-Shirt</h3>
+                        <div class="product-price">₹599.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(67 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(3)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">👖</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Classic Blue Jeans</h3>
+                        <div class="product-price">₹1,299.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(43 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(4)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">📖</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Java Programming Book</h3>
+                        <div class="product-price">₹899.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(156 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(5)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">👟</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Running Shoes</h3>
+                        <div class="product-price">₹2,999.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(89 reviews)</span>
+                        </div>
+                        <button class="btn-add-to-cart" onclick="addToCart(6)">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="products.jsp" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEasy</h3>
+                    <p>Your trusted online shopping destination with quality products and excellent service.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.jsp">Products</a></li>
+                        <li><a href="categories.jsp">Categories</a></li>
+                        <li><a href="about.jsp">About Us</a></li>
+                        <li><a href="contact.jsp">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, City, State 12345</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> support@shopeasy.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopEasy. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize cart count on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+        
+        // Search functionality
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm.trim()) {
+                window.location.href = `products.jsp?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+        
+        // Allow search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+        
+        // Add to cart functionality
+        function addToCart(productId) {
+            let cartCount = parseInt(localStorage.getItem('cartCount') || '0');
+            cartCount++;
+            localStorage.setItem('cartCount', cartCount.toString());
+            updateCartCount();
+            
+            // Show success message
+            showMessage('Product added to cart!', 'success');
+        }
+        
+        // Update cart count display
+        function updateCartCount() {
+            const cartCount = localStorage.getItem('cartCount') || '0';
+            document.getElementById('cartCount').textContent = cartCount;
+        }
+        
+        // Show message to user
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `alert alert-${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 2rem;
+                background: ${type === 'success' ? '#27ae60' : '#e74c3c'};
+                color: white;
+                border-radius: 8px;
+                z-index: 10000;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
